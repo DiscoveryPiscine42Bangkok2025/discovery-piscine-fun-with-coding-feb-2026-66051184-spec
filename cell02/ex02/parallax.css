@@ -1,0 +1,49 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+.parallax {
+    min-height: 100vh; 
+
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img1 {
+    background-image: url("https://wallpapers.com/images/featured/4k-nature-ztbad1qj8vdjqe0p.jpg");
+}
+
+.img2 {
+    background-image: url("https://server.wallpaperalchemy.com/storage/wallpapers/47/4k-high-resolution-mountain-landscape-wallpaper.png");
+}
+
+.black-block {
+    height: 400px; 
+    background-color: black;
+    color: white;
+    font-size: 36px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.message-box {
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
