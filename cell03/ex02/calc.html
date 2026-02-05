@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>It's over 9000</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; padding-top: 50px; }
+        .calc-container { border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
+    </style>
+</head>
+<body>
+
+    <div class="calc-container">
+        <input type="text" id="left" placeholder="Left member">
+        
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        
+        <input type="text" id="right" placeholder="Right member">
+        
+        <input type="submit" value="Try me!" onclick="calculate()">
+    </div>
+
+    <script>
+        // แจ้งเตือนซ้ำทุกๆ 30 วินาที
+        setInterval(() => {
+            alert('Please, use me...');
+        }, 30000);
+
+        function calculate() {
+            const leftVal = document.getElementById('left').value;
+            const rightVal = document.getElementById('right').value;
+            const op = document.getElementById('operator').value;
+
+            // Regex สำหรับตรวจว่าเป็นจำนวนเต็มบวกเท่านั้น
+            const isPositiveInt = (str) => /^\d+$/.test(str);
+
+            if (!isPositiveInt(leftVal) || !isPositiveInt(rightVal)) {
+                alert('Error :(');
+                return;
+            }
+
+            const left = parseInt(leftVal, 10);
+            const right = parseInt(rightVal, 10);
+            let result;
+
+            // จัดการกรณีหารด้วยศูนย์ หรือหาเศษด้วยศูนย์
+            if ((op === '/' || op === '%') && right === 0) {
+                const zeroMsg = "It's over 9000!";
+                console.log(zeroMsg);
+                alert(zeroMsg);
+                return;
+            }
+
+            // ดำเนินการคำนวณ
+            switch (op) {
+                case '+': result = left + right; break;
+                case '-': result = left - right; break;
+                case '*': result = left * right; break;
+                case '/': result = left / right; break;
+                case '%': result = left % right; break;
+            }
+
+            console.log(result);
+            alert(result);
+        }
+    </script>
+</body>
+</html>
