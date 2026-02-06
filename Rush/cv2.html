@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player 2 - Asphalt Theme</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* --- ส่วนตกแต่งธีม (CSS) --- */
+        
+        /* พื้นหลังสีเทาเข้ม (ถนน) ตัวหนังสือสีขาว */
+        body {
+            background-color: #212529; 
+            color: white;
+            padding-top: 80px; /* เว้นที่ให้เมนูบาร์ด้านบน */
+            font-family: Arial, sans-serif;
+        }
+
+        /* หัวข้อทำให้เอียง (Italic) ให้ดูมีความเร็ว */
+        h1, h2, h3 {
+            font-style: italic;
+            text-transform: uppercase;
+            color: #00f3ff; /* สีฟ้านีออน */
+        }
+
+        /* เส้นขอบสีนีออน เอาไว้ใส่รูปหรือกล่อง */
+        .neon-box {
+            border: 3px solid #00f3ff;
+            padding: 15px;
+            background-color: #000;
+        }
+
+        /* รูปโปรไฟล์ */
+        .racer-photo {
+            width: 200px;
+            border-radius: 10px; /* ขอบมนนิดหน่อย */
+            border: 3px solid #d63384; /* ขอบสีชมพูม่วง */
+        }
+
+        /* ปุ่มกดสไตล์รถแข่ง */
+        .btn-race {
+            background-color: #d63384;
+            color: white;
+            font-style: italic;
+            border: none;
+            padding: 10px 30px;
+            font-size: 1.2rem;
+        }
+        .btn-race:hover {
+            background-color: #00f3ff;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top border-bottom border-info">
+        <div class="container">
+            <a class="navbar-brand fst-italic text-info" href="index.html">ASPHALT LEGEND</a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#profile">Driver</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#stats">Performance</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Finish Line</a></li>
+                    <li class="nav-item"><a class="nav-link text-warning" href="index.html">Back to Menu</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="profile" class="container text-center mb-5">
+        <img src="https://via.placeholder.com/200/000000/00f3ff?text=DRIVER+2" class="racer-photo mb-3">
+        <h1>SOMYING (Player 2)</h1>
+        <h3>Class: S-Tier (Frontend Dev)</h3>
+        <p>Motto: "Code fast, break nothing."</p>
+    </section>
+
+    <section id="stats" class="container mb-5">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <h2 class="text-white">Engine Stats (Skills)</h2>
+                
+                <label>HTML/CSS (Acceleration)</label>
+                <div class="progress mb-3">
+                    <div class="progress-bar bg-info" style="width: 95%">95%</div>
+                </div>
+
+                <label>JavaScript (Top Speed)</label>
+                <div class="progress mb-3">
+                    <div class="progress-bar bg-primary" style="width: 80%">80%</div>
+                </div>
+
+                <label>Bootstrap (Nitro)</label>
+                <div class="progress mb-3">
+                    <div class="progress-bar bg-danger" style="width: 90%">90%</div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <h2 class="text-white">Career Mode (History)</h2>
+                
+                <div class="neon-box mb-3">
+                    <h4>🏆 Piscine Discovery</h4>
+                    <p>Status: 1st Place Winner</p>
+                </div>
+
+                <div class="neon-box">
+                    <h4>🏆 Rush Tournament</h4>
+                    <p>Status: Currently Racing...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container text-center py-5">
+        <h2 class="mb-3">READY TO RACE?</h2>
+        <p>Challenge this driver for a new project.</p>
+        <a href="mailto:66051184@kmitl.ac.th" class="btn btn-race" onclick="return confirm('Send email to start the race?')">
+            CHALLENGE NOW
+        </a>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

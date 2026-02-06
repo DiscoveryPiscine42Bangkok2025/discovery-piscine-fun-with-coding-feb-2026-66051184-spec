@@ -1,0 +1,63 @@
+/* กำหนดสไตล์หลักให้เหมือนหน้าจอคอมยุคเก่า (Matrix Style) */
+body {
+    background-color: black;      /* พื้นหลังดำ */
+    color: #00ff00;              /* ตัวหนังสือเขียวแบบ Hacker */
+    font-family: 'Courier New', monospace; /* ฟอนต์พิมพ์ดีด */
+    padding-top: 80px;           /* เว้นที่ด้านบนไม่ให้ Navbar บังเนื้อหา */
+}
+
+/* ปรับแต่ง Navbar ให้เป็นสีดำขอบเขียว */
+.navbar {
+    background-color: #111;
+    border-bottom: 2px solid #00ff00;
+}
+
+/* ปรับลิงก์ใน Navbar */
+.nav-link {
+    color: white !important;
+    text-transform: uppercase;   /* ตัวพิมพ์ใหญ่ทั้งหมด */
+}
+
+/* กรอบรูปโปรไฟล์ */
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border: 4px solid #00ff00;   /* กรอบสีเขียว */
+    border-radius: 50%;          /* ทำเป็นวงกลม */
+    object-fit: cover;
+}
+
+/* กล่องข้อความ (Card) */
+.game-card {
+    border: 2px solid #00ff00;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #111;
+}
+
+/* หลอดพลัง (Skills) */
+.progress {
+    height: 25px;
+    background-color: #333;
+    margin-bottom: 15px;
+    border: 1px solid white;
+}
+.progress-bar {
+    background-color: #00ff00;
+    color: black;
+    font-weight: bold;
+}
+
+/* ปุ่มกด */
+.btn-custom {
+    background-color: black;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    padding: 10px 20px;
+    text-decoration: none; /* เอาขีดเส้นใต้ลิงก์ออก */
+    display: inline-block; /* ให้มีขนาดกว้างยาวได้ */
+}
+.btn-custom:hover {
+    background-color: #00ff00; /* สลับสีตอนเอาเมาส์ชี้ */
+    color: black;
+}

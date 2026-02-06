@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player 1 Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" style="color: #00ff00;">PLAYER 1</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Stats</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Back</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="about" class="container text-center mt-5">
+        <img src="https://via.placeholder.com/200/000000/00ff00?text=P1" class="profile-img mb-4">
+        <h1>NAME: SOMCHAI</h1>
+        <h3>Class: Warrior (Backend Dev)</h3>
+        <p>I love coding logic and databases.</p>
+    </section>
+
+    <section id="skills" class="container mt-5">
+        <h2 class="text-center mb-4">SKILL STATS</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <label>C Language (STR)</label>
+                <div class="progress"><div class="progress-bar" style="width: 90%">90%</div></div>
+                
+                <label>Linux (DEF)</label>
+                <div class="progress"><div class="progress-bar" style="width: 80%">80%</div></div>
+            </div>
+            <div class="col-md-6">
+                <div class="game-card mt-0">
+                    <h4>QUEST LOG (Experience)</h4>
+                    <ul>
+                        <li>Passed 'Piscine Discovery'</li>
+                        <li>Completed 'Shell Script' Mission</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container text-center mt-5 mb-5">
+        <h2>GAME OVER?</h2>
+        <p>Insert coin or contact me to continue.</p>
+        <a href="66051184@kmitl.ac.th" class="btn-custom" onclick="return confirmContact()">EMAIL ME</a>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
