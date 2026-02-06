@@ -3,128 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player 2 - Asphalt Theme</title>
+    <title>Player 2 - Asphalt Scroll</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
     <style>
-        /* --- ส่วนตกแต่งธีม (CSS) --- */
-        
-        /* พื้นหลังสีเทาเข้ม (ถนน) ตัวหนังสือสีขาว */
+        html { scroll-behavior: smooth; }
+
         body {
             background-color: #212529; 
             color: white;
-            padding-top: 80px; /* เว้นที่ให้เมนูบาร์ด้านบน */
             font-family: Arial, sans-serif;
         }
 
-        /* หัวข้อทำให้เอียง (Italic) ให้ดูมีความเร็ว */
         h1, h2, h3 {
             font-style: italic;
             text-transform: uppercase;
-            color: #00f3ff; /* สีฟ้านีออน */
+            color: #00f3ff;
         }
 
-        /* เส้นขอบสีนีออน เอาไว้ใส่รูปหรือกล่อง */
+        section {
+            min-height: 100vh; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px dashed #444; 
+            padding: 20px;
+        }
+
+        /* --- Style สำหรับการ์ด Contact (ทำตามแบบในรูป แต่เป็นธีมมืด) --- */
+        .contact-card {
+            background-color: #000;       /* พื้นหลังดำ */
+            border: 2px solid #00f3ff;    /* ขอบสีฟ้านีออน */
+            border-radius: 15px;          /* มุมโค้งมนเหมือนในรูป */
+            padding: 20px;
+            display: flex;                /* จัดไอคอนกับตัวหนังสือให้อยู่บรรทัดเดียวกัน */
+            align-items: center;
+            text-decoration: none;        /* เอาขีดเส้นใต้ออก */
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        /* เอฟเฟกต์ตอนเอาเมาส์ชี้ */
+        .contact-card:hover {
+            background-color: #00f3ff;    /* เปลี่ยนพื้นเป็นสีฟ้า */
+            color: black;                 /* ตัวหนังสือเปลี่ยนเป็นดำ */
+            transform: translateY(-5px);  /* ลอยขึ้นนิดนึง */
+            box-shadow: 0 0 20px #00f3ff; /* เรืองแสง */
+        }
+
+        .icon-box {
+            font-size: 2.5rem;            /* ขนาดไอคอน */
+            margin-right: 15px;           /* เว้นระยะห่างจากตัวหนังสือ */
+        }
+
+        /* --- Style อื่นๆ คงเดิม --- */
         .neon-box {
             border: 3px solid #00f3ff;
-            padding: 15px;
+            padding: 20px;
             background-color: #000;
+            width: 100%;
+            margin-bottom: 15px;
         }
 
-        /* รูปโปรไฟล์ */
         .racer-photo {
-            width: 200px;
-            border-radius: 10px; /* ขอบมนนิดหน่อย */
-            border: 3px solid #d63384; /* ขอบสีชมพูม่วง */
-        }
-
-        /* ปุ่มกดสไตล์รถแข่ง */
-        .btn-race {
-            background-color: #d63384;
-            color: white;
-            font-style: italic;
-            border: none;
-            padding: 10px 30px;
-            font-size: 1.2rem;
-        }
-        .btn-race:hover {
-            background-color: #00f3ff;
-            color: black;
+            width: 250px;
+            border-radius: 10px;
+            border: 3px solid #d63384;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top border-bottom border-info">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top border-bottom border-warning">
         <div class="container">
             <a class="navbar-brand fst-italic text-info" href="index.html">ASPHALT LEGEND</a>
-            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#profile">Driver</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#stats">Performance</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Finish Line</a></li>
-                    <li class="nav-item"><a class="nav-link text-warning" href="index.html">Back to Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#stats">Hobby & Info</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link text-warning" href="index.html">Exit Race</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section id="profile" class="container text-center mb-5">
-        <img src="https://via.placeholder.com/200/000000/00f3ff?text=DRIVER+2" class="racer-photo mb-3">
-        <h1>SOMYING (Player 2)</h1>
-        <h3>Class: S-Tier (Frontend Dev)</h3>
-        <p>Motto: "Code fast, break nothing."</p>
+    <section id="profile" class="text-center">
+        <div class="container">
+            <img src="https://www.modify.in.th/wp-content/uploads/Meme-Success-Kid.webp" class="racer-photo">
+            <h1 class="display-3">nsaengju</h1>
+            <h3>Digital Technology & Innovation</h3>
+            <p class="lead text-secondary">▼ SCROLL DOWN FOR INFO ▼</p>
+        </div>
     </section>
 
-    <section id="stats" class="container mb-5">
-        <div class="row">
-            <div class="col-md-6 mb-4">
-                <h2 class="text-white">Engine Stats (Skills)</h2>
+    <section id="stats">
+        <div class="container">
+            <h2 class="text-center mb-5 display-4">PERSONAL DATA</h2>
+            <div class="row w-100"> 
                 
-                <label>HTML/CSS (Acceleration)</label>
-                <div class="progress mb-3">
-                    <div class="progress-bar bg-info" style="width: 95%">95%</div>
+                <div class="col-md-6 mb-4">
+                    <h3 class="text-white h4">Hobby</h3>
+                    <label>Gaming</label>
+                    <div class="progress mb-4" style="height: 25px;">
+                        <div class="progress-bar bg-info" style="width: 90%">90%</div>
+                    </div>
+                    <label>Music</label>
+                    <div class="progress mb-4" style="height: 25px;">
+                        <div class="progress-bar bg-primary" style="width: 80%">80%</div>
+                    </div>
+                    <label>Sleeping</label>
+                    <div class="progress mb-4" style="height: 25px;">
+                        <div class="progress-bar bg-danger" style="width: 40%">40%</div>
+                    </div>
                 </div>
 
-                <label>JavaScript (Top Speed)</label>
-                <div class="progress mb-3">
-                    <div class="progress-bar bg-primary" style="width: 80%">80%</div>
+                <div class="col-md-6">
+                    <h3 class="text-white h4">About me</h3>
+                    <div class="neon-box">
+                        <h5>🏆 Who am I?</h5>
+                        <p class="mb-0 text-white-50">Name:Natarnit Saengjun(Junior)<br>
+                            Faculty: KMITL <br>
+                            Major: K-Dtii <br>
+                            Email: 66051184@kmitl.ac.th
+                        </p>
+                    </div>
+                    <div class="neon-box">
+                        <h5>🏁 My Goal</h5>
+                        <p class="mb-0 text-white-50">I want to rich</p>
+                    </div>
                 </div>
 
-                <label>Bootstrap (Nitro)</label>
-                <div class="progress mb-3">
-                    <div class="progress-bar bg-danger" style="width: 90%">90%</div>
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <h2 class="text-white">Career Mode (History)</h2>
-                
-                <div class="neon-box mb-3">
-                    <h4>🏆 Piscine Discovery</h4>
-                    <p>Status: 1st Place Winner</p>
-                </div>
-
-                <div class="neon-box">
-                    <h4>🏆 Rush Tournament</h4>
-                    <p>Status: Currently Racing...</p>
-                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="container text-center py-5">
-        <h2 class="mb-3">READY TO RACE?</h2>
-        <p>Challenge this driver for a new project.</p>
-        <a href="mailto:66051184@kmitl.ac.th" class="btn btn-race" onclick="return confirm('Send email to start the race?')">
-            CHALLENGE NOW
-        </a>
+    <section id="contact" class="text-center">
+        <div class="container">
+            <h2 class="display-1 text-danger fst-italic mb-5">CONTACT</h2>
+            
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-md-6">
+                    <a href="https://instagram.com" target="_blank" class="contact-card">
+                        <i class="bi bi-instagram icon-box text-danger"></i> <div class="text-start">
+                            <div class="fw-bold fs-5">Instagram</div>
+                            <div class="small text-white-50">natarnit.seangjun</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6">
+                    <a href="https://facebook.com" target="_blank" class="contact-card">
+                        <i class="bi bi-facebook icon-box text-primary"></i>
+                        <div class="text-start">
+                            <div class="fw-bold fs-5">Facebook</div>
+                            <div class="small text-white-50">natarnit.seangjun</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6">
+                    <a href="mailto:66051184@kmitl.ac.th" class="contact-card" onclick="return confirm('Send email now?')">
+                        <i class="bi bi-envelope-fill icon-box text-warning"></i>
+                        <div class="text-start">
+                            <div class="fw-bold fs-5">Email</div>
+                            <div class="small text-white-50">66051184@kmitl.ac.th</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-6">
+                    <a href="https://github.com" target="_blank" class="contact-card">
+                        <i class="bi bi-github icon-box text-light"></i>
+                        <div class="text-start">
+                            <div class="fw-bold fs-5">GitHub</div>
+                            <div class="small text-white-50">github.com/natarnit.seangjun</div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+            <br><br>
+            <a href="#profile" class="text-white-50 text-decoration-none">▲ Back to Top ▲</a>
+        </div>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

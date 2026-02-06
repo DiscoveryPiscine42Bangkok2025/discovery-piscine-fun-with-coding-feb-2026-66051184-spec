@@ -3,61 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player 1 Resume</title>
+    <title>Player 1</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <style>
+        /* --- GAMER THEME CSS --- */
+        
+        :root {
+            --main-color: #00ff00; /* สีเขียวเกมเมอร์ */
+            --bg-color: #0a0a0a;   /* สีดำพื้นหลัง */
+            --card-bg: #111;       /* สีดำการ์ด */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--main-color);
+            font-family: 'Courier New', monospace; /* ฟอนต์เหมือนโค้ด */
+            padding-top: 80px;
+        }
+
+        /* หัวข้อต่างๆ */
+        h1, h2, h3, h4, h5 {
+            text-transform: uppercase;
+            font-weight: bold;
+            text-shadow: 0 0 5px var(--main-color); /* เรืองแสง */
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #000;
+            border-bottom: 2px solid var(--main-color);
+            box-shadow: 0 0 10px var(--main-color);
+        }
+        .nav-link {
+            color: white !important;
+            transition: 0.3s;
+        }
+        .nav-link:hover {
+            color: var(--main-color) !important;
+            text-shadow: 0 0 10px var(--main-color);
+        }
+
+        /* Profile Image */
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 4px solid var(--main-color);
+            border-radius: 50%; /* วงกลม */
+            box-shadow: 0 0 20px var(--main-color); /* เงาเขียว */
+            margin-bottom: 20px;
+        }
+
+        /* Progress Bar (หลอดพลัง) */
+        .progress {
+            height: 25px;
+            background-color: #333;
+            border: 1px solid var(--main-color);
+            border-radius: 0; /* เหลี่ยมๆ สไตล์ Pixel */
+            margin-bottom: 15px;
+        }
+        .progress-bar {
+            background-color: var(--main-color);
+            color: black;
+            font-weight: bold;
+            line-height: 25px;
+        }
+
+        /* Game Card (About Me) */
+        .game-card {
+            border: 2px solid var(--main-color);
+            padding: 20px;
+            background-color: var(--card-bg);
+            box-shadow: 5px 5px 0px var(--main-color); /* เงาแข็งแบบเกม Retro */
+            height: 100%;
+        }
+        
+        /* List (ul/li) */
+        ul li {
+            list-style-type: square; /* จุดสี่เหลี่ยม */
+            margin-bottom: 10px;
+        }
+
+        /* --- CONTACT BOX STYLE (ของคุณ) --- */
+        .contact-section {
+            padding-bottom: 50px;
+            margin-top: 50px;
+        }
+        
+        .contact-box {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border: 2px solid var(--main-color);
+            background-color: black;
+            color: var(--main-color);
+            text-decoration: none;
+            transition: all 0.3s;
+            border-radius: 5px;
+        }
+
+        /* เอฟเฟกต์ตอนชี้เมาส์ */
+        .contact-box:hover {
+            background-color: var(--main-color);
+            color: black; /* ตัวหนังสือกลับสีเป็นดำ */
+            box-shadow: 0 0 15px var(--main-color);
+            transform: translateY(-5px);
+        }
+
+        .contact-box i {
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+        
+        .contact-name { font-weight: bold; font-size: 1.1rem; }
+        .contact-detail { font-size: 0.8rem; opacity: 0.8; }
+
+    </style>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html" style="color: #00ff00;">PLAYER 1</a>
+            <a class="navbar-brand" href="index.html" style="color: #00ff00; font-weight: bold;">&lt;Hacker&gt;</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">Profile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Stats</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html">Back</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">PROFILE</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">STATS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">INVENTORY</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html" style="color: white;">[EXIT GAME]</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <section id="about" class="container text-center mt-5">
-        <img src="https://via.placeholder.com/200/000000/00ff00?text=P1" class="profile-img mb-4">
-        <h1>NAME: SOMCHAI</h1>
-        <h3>Class: Warrior (Backend Dev)</h3>
-        <p>I love coding logic and databases.</p>
+        <img src="https://images.steamusercontent.com/ugc/2028361555342705423/4FC73CB5FD857D631785D310ECD41D81DCDAD128/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true" class="profile-img" alt="Profile Pic">
+        
+        <h1>NAME: Chitsanupong chumsri</h1>
+        <h3>Major: K-DAI </h3>
+        <p>i love play games.</p>
     </section>
 
     <section id="skills" class="container mt-5">
-        <h2 class="text-center mb-4">SKILL STATS</h2>
+        <h2 class="text-center mb-5">> CHARACTER STATS_</h2>
         <div class="row">
-            <div class="col-md-6">
-                <label>C Language (STR)</label>
-                <div class="progress"><div class="progress-bar" style="width: 90%">90%</div></div>
+            <div class="col-md-6 mb-4">
+                <h4 style="color: white;">SKILL LEVELS</h4>
                 
-                <label>Linux (DEF)</label>
-                <div class="progress"><div class="progress-bar" style="width: 80%">80%</div></div>
+                <label>GAMING SKILL</label>
+                <div class="progress"><div class="progress-bar" style="width: 90%">LVL 90</div></div>
+                
+                <label>DRAWING</label>
+                <div class="progress"><div class="progress-bar" style="width: 10%">LVL 10</div></div>
+
+                <label>RIDING BICYCLE</label>
+                <div class="progress"><div class="progress-bar" style="width: 20%">LVL 20</div></div>
+
+                <label>SHOOTING RANGE</label>
+                <div class="progress"><div class="progress-bar" style="width: 15%">LVL 15</div></div>
             </div>
+            
             <div class="col-md-6">
-                <div class="game-card mt-0">
-                    <h4>QUEST LOG (Experience)</h4>
+                <div class="game-card">
+                    <h4>> QUEST LOG (About Me)</h4>
                     <ul>
-                        <li>Passed 'Piscine Discovery'</li>
-                        <li>Completed 'Shell Script' Mission</li>
+                        <li>Hi, My name is <span style="color:white; font-weight:bold;">Peter</span>.</li>
+                        <li>I am the <span style="color:white;">REAL GAMER!</span></li>
+                        <li>Favorite Genre: FPS & Survivor Games.</li>
                     </ul>
+                    <hr style="border-color: var(--main-color);">
+                    <h5>> MAIN OBJECTIVE (Goal)</h5>
+                    <ul>
+                        <li>"Unlock knowledge about everything."</li>
+                    </ul>    
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="container text-center mt-5 mb-5">
-        <h2>GAME OVER?</h2>
-        <p>Insert coin or contact me to continue.</p>
-        <a href="66051184@kmitl.ac.th" class="btn-custom" onclick="return confirmContact()">EMAIL ME</a>
+    <section id="contact" class="contact-section container">
+        <h2 class="text-center mb-5">> Contact</h2>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <a href="https://instagram.com" target="_blank" class="contact-box">
+                    <i class="bi bi-instagram"></i>
+                    <div>
+                        <div class="contact-name">INSTAGRAM</div>
+                        <div class="contact-detail">@chitsanupong</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-6">
+                <a href="https://facebook.com" target="_blank" class="contact-box">
+                    <i class="bi bi-facebook"></i>
+                    <div>
+                        <div class="contact-name">FACEBOOK</div>
+                        <div class="contact-detail">facebook.com/chitsanupong</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-6">
+                <a href="mailto:66051178@kmitl.ac.th" class="contact-box">
+                    <i class="bi bi-envelope-fill"></i>
+                    <div>
+                        <div class="contact-name">EMAIL</div>
+                        <div class="contact-detail">66051178@kmitl.ac.th</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-6">
+                <a href="https://github.com/DiscoveryPiscine42Bangkok2025/discovery-piscine-fun-with-coding-feb-2026-PeterXDD" target="_blank" class="contact-box">
+                    <i class="bi bi-github"></i>
+                    <div>
+                        <div class="contact-name">GITHUB</div>
+                        <div class="contact-detail">github.com/chitsanupong</div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </section>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
