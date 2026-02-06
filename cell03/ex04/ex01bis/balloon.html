@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Explode this balloon</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            /* set ให้กึ่งกลางหน้าจอ */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #balloon {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%; /* ทำให้เป็นวงกลม */
+            cursor: pointer;
+            transition: all 0.1s ease; /* ใส่ Transition */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="balloon"></div>
+
+    <script>
+        var size = 200;
+        var colors = ['red', 'green', 'blue'];
+        var colorIdx = 0;
+        var $balloon = $('#balloon'); 
+
+        // ฟังก์ชันอัปเดตหน้าตา (Balloon)
+        function updateBalloon() {
+            $balloon.css({
+                'width': size + 'px',
+                'height': size + 'px',
+                'background-color': colors[colorIdx]
+            });
+        }
+
+        $balloon.click(function() {
+            size += 10; // เพิ่มขนาด 10px
+            colorIdx++; // เปลี่ยนสี
+
+            // ถ้าสีเป็น (Blue) ให้วนกลับมาเป็น (Red)
+            if (colorIdx > 2) {
+                colorIdx = 0;
+            }
+
+            // ถ้าขนาดเกิน 420px ให้ระเบิด!
+            if (size > 420) {
+                size = 200;
+                colorIdx = 0; // กลับไปสีแดง
+            }
+
+            updateBalloon();
+        });
+
+        $balloon.mouseleave(function() {
+            size -= 5; // ลดขนาด
+            
+            // ห้ามให้ (baloon) เล็กกว่า 200px
+            if (size < 200) {
+                size = 200;
+            }
+
+            colorIdx--; // เปลี่ยนสีย้อนกลับ
+
+            // ถ้าสีเป็น (Red) ให้วนไปที่ (Blue)
+            if (colorIdx < 0) {
+                colorIdx = 2;
+            }
+
+            updateBalloon();
+        });
+    </script>
+</body>
+</html>

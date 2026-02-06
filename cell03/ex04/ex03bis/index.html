@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To Do List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #ft_list {
+            margin-top: 20px;
+            text-align: center;
+        }
+        /* ตกแต่ง To Do ให้เป็นกล่อง */
+        #ft_list div {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        #ft_list div:hover {
+            background-color: #ffcccc; /* เปลี่ยนสีตอนเอาเมาส์ชี้ให้รู้ว่าลบได้ */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="newBtn">New</button>
+    
+    <div id="ft_list"></div>
+
+    <script src="todo.js"></script>
+</body>
+</html>
